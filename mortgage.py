@@ -6,7 +6,6 @@ def findPayment(loan, interest_rate, years_of_loan):
 	m = years_of_loan * 12
 	return (r * loan * ((1 + r)**m) / ((1 + r)** m - 1))
 
-print(findPayment(200000, 6.5, 30))
 
 class Mortgage(object):
 	def __init__(self, loan, annRate, years):
@@ -30,4 +29,3 @@ class Mortgage(object):
 		return self.legend
 	
 
-		<#code#>
