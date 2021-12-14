@@ -13,4 +13,3 @@ class FixedWithPts(Mortgage):
 		self.paid = [loan * (pts/100)]
 		self.legend = (f'Fixed, {r} %, {pts} points')
 		
-class 
