@@ -50,11 +50,11 @@ class findInterestRate(object):
 			return False
 		
 class calcDebt(object):
-	def __init__(self, student_loans_monthly = 0, student_loans_total = 0, car_payment = 0, in_deffer = False, credit_card = 0, other = 0, gross_pay = 50000):
+	def __init__(self, student_loans_monthly = 0, student_loans_total = 0, car_payment = 0, in_defer = False, credit_card = 0, other = 0, gross_pay = 50000):
 		self.slm = student_loans_monthly
 		self.slt = student_loans_total
 		self.cp = car_payment
-		self.dfer = in_deffer
+		self.dfer = in_defer
 		self.cc = credit_card
 		self.oth = other
 		self.gp = gross_pay
