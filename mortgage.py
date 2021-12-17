@@ -49,22 +49,28 @@ class findInterestRate(object):
 		elif self.cs < 680:
 			return False
 		
+class calcDebt_defer(object):
+	def __init__(self, student_loans_total = 0, car_payment = 0, credit_card = 0, other = 0, gross_pay = 50000, credit_percent = 0):
+		self.slt = float(student_loans_total)
+		self.cp = float(car_payment)
+		self.cc = float(credit_card)
+		self.credp = float(credit_percent)
+		self.oth = float(other)
+		self.gp = float(gross_pay)
+		
+	
+	def debttoincomedefer(self):
+		return (max((findPayment(self.slt, 6.5, 10) + self.cp + self.cc + self.oth), 1)/(self.gp / 12)) * 100
+		
 class calcDebt(object):
-	def __init__(self, student_loans_monthly = 0, student_loans_total = 0, car_payment = 0, in_defer = False, credit_card = 0, other = 0, gross_pay = 50000):
-		self.slm = student_loans_monthly
-		self.slt = student_loans_total
-		self.cp = car_payment
-		self.dfer = in_defer
-		self.cc = credit_card
-		self.oth = other
-		self.gp = gross_pay
-	
+	def __init__(self, student_loans_monthly = 0, car_payment = 0, credit_card = 0, other = 0, gross_pay = 50000, credit_percent = 0):
+		self.slm = float(student_loans_monthly)
+		self.cp = float(car_payment)
+		self.cc = float(credit_card)
+		self.credp = float(credit_percent)
+		self.oth = float(other)
+		self.gp = float(gross_pay)
+		
+		
 	def debttoincome(self):
-		if self.dfer == False:
-			return (self.slm + self.cp + self.cc + self.oth)/(self.gp / 12)
-		elif self.dfer == True:
-			return (findPayment(self.slt, 6.5, 10) + self.cp + self.cc + self.oth)/(self.gp / 12)
-		
-	
-		
-		
+		return (max((self.slm + self.cp + self.cc + self.oth), 1)/(self.gp / 12)) * 100
